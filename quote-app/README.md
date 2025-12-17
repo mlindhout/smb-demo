@@ -109,3 +109,17 @@ quote-app/
 ## Browser Compatibiliteit
 
 Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
+
+## Deployment
+
+De app kan automatisch gedeployd worden naar GitHub Pages via GitHub Actions.
+
+Zie [../DEPLOYMENT.md](../DEPLOYMENT.md) voor volledige deployment instructies.
+
+### Quick Deploy naar GitHub Pages
+
+1. Enable GitHub Pages in repository settings (Source: GitHub Actions)
+2. Push naar main branch
+3. App wordt automatisch gebouwd en gedeployd
+
+Live URL: `https://<username>.github.io/smb-demo/`
