@@ -1,0 +1,142 @@
+<div class="min-h-screen bg-gray-50">
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl md:text-2xl font-bold text-gray-800">Quote Manager</h1>
+      <div class="flex items-center gap-4">
+        <span class="text-sm text-gray-600 hidden md:inline">Welkom, {{ userName }}</span>
+        <button
+          (click)="logout()"
+          class="text-sm bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg transition"
+        >
+          Uitloggen
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-white rounded-lg shadow p-4 md:p-6">
+        <div class="text-2xl md:text-3xl font-bold text-blue-600">{{ customerCount }}</div>
+        <div class="text-sm text-gray-600 mt-1">Klanten</div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-4 md:p-6">
+        <div class="text-2xl md:text-3xl font-bold text-green-600">{{ quoteCount }}</div>
+        <div class="text-sm text-gray-600 mt-1">Offertes</div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-4 md:p-6">
+        <div class="text-2xl md:text-3xl font-bold text-purple-600">{{ orderCount }}</div>
+        <div class="text-sm text-gray-600 mt-1">Opdrachten</div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-4 md:p-6">
+        <div class="text-2xl md:text-3xl font-bold text-orange-600">{{ invoiceCount }}</div>
+        <div class="text-sm text-gray-600 mt-1">Facturen</div>
+      </div>
+    </div>
+
+    <!-- Navigation Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <a
+        routerLink="/customers"
+        class="bg-white rounded-lg shadow hover:shadow-lg transition p-6 block group"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <div class="text-4xl">👥</div>
+          <svg
+            class="w-6 h-6 text-gray-400 group-hover:text-blue-600 transition"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </div>
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Klanten</h2>
+        <p class="text-sm text-gray-600">Beheer klantgegevens en contactinformatie</p>
+      </a>
+
+      <a
+        routerLink="/quotes"
+        class="bg-white rounded-lg shadow hover:shadow-lg transition p-6 block group"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <div class="text-4xl">📝</div>
+          <svg
+            class="w-6 h-6 text-gray-400 group-hover:text-green-600 transition"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </div>
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Offertes</h2>
+        <p class="text-sm text-gray-600">Maak en verstuur offertes naar klanten</p>
+      </a>
+
+      <a
+        routerLink="/orders"
+        class="bg-white rounded-lg shadow hover:shadow-lg transition p-6 block group"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <div class="text-4xl">📦</div>
+          <svg
+            class="w-6 h-6 text-gray-400 group-hover:text-purple-600 transition"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </div>
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Opdrachten</h2>
+        <p class="text-sm text-gray-600">Beheer geaccepteerde opdrachten</p>
+      </a>
+
+      <a
+        routerLink="/invoices"
+        class="bg-white rounded-lg shadow hover:shadow-lg transition p-6 block group"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <div class="text-4xl">💰</div>
+          <svg
+            class="w-6 h-6 text-gray-400 group-hover:text-orange-600 transition"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </div>
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Facturen</h2>
+        <p class="text-sm text-gray-600">Verstuur en volg facturen</p>
+      </a>
+    </div>
+  </main>
+</div>
