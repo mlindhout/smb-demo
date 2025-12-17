@@ -36,12 +36,23 @@ jobs:
       - name: Build Angular app
         run: |
           cd quote-app
-          npm run build -- --base-href /smb-demo/
+          npm run build:gh-pages
+
+      - name: Verify base href
+        run: |
+          cd quote-app/dist/quote-app/browser
+          if ! grep -q '<base href="/smb-demo/">' index.html; then
+            echo "Error: base href not set correctly in index.html"
+            cat index.html | grep "base href"
+            exit 1
+          fi
+          echo "✓ Base href is correct: /smb-demo/"
 
       - name: Add .nojekyll file
         run: |
           cd quote-app/dist/quote-app/browser
           touch .nojekyll
+          echo "✓ .nojekyll file created"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
