@@ -72,7 +72,10 @@ Als je de app handmatig wilt deployen:
 ```bash
 cd quote-app
 
-# Build met correcte base-href
+# Build met correcte base-href voor GitHub Pages
+npm run build:gh-pages
+
+# Of alternatief met inline parameter:
 npm run build -- --base-href /smb-demo/
 
 # De build output staat in: dist/quote-app/browser
